@@ -6,6 +6,3 @@ router = DefaultRouter()
 router.register('register', RegisterViewset, basename='register')
 urlpatterns = router.urls
 
-urlpatterns = [
-    
-]
