@@ -54,3 +54,13 @@ class LoginViewSet(viewsets.ViewSet):
             return Response(serializer.errors, status=400)
 
 
+class UserViewSet(viewsets.ViewSet):
+    permissions_classes = [permissions.AllowAny]
+    queryset = User.objects.all()
+    serializer_class = RegisterSerializer
+
+    def list(self, request):
+        queryset = User.objects.all()
+        serializer = self.serializer_class(queryset, many=True)
+        return Response(serializer.data)
+        
