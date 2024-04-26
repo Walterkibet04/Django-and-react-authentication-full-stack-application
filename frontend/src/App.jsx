@@ -27,10 +27,10 @@ function App() {
           <Navbar 
             content = {
                <Routes>
-                  <Route element={<ProtectedRoute/>}>
+                  {/* <Route element={<ProtectedRoute/>}> */}
                       <Route path="/home" element={<Home/>}/>
                       <Route path="/about" element={<About/>}/>
-                  </Route>
+                  {/* </Route> */}
               </Routes>
             }
           />

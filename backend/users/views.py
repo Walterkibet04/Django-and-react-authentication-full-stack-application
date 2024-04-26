@@ -55,7 +55,7 @@ class LoginViewSet(viewsets.ViewSet):
 
 
 class UserViewSet(viewsets.ViewSet):
-    permissions_classes = [permissions.AllowAny]
+    permissions_classes = [permissions.IsAuthenticated]
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
 
