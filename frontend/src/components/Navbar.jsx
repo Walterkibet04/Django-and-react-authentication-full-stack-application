@@ -12,7 +12,10 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
+import LogoutIcon from '@mui/icons-material/Logout';
 import { Link, useLocation } from 'react-router-dom';
+import AxiosInstance from './forms/AxiosInstance';
+import { useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -20,6 +23,12 @@ export default function Navbar(props) {
     const {content} = props
     const location = useLocation()
     const path = location.pathname
+    const navigate = useNavigate()
+
+    const logoutUser = () =>{
+      AxiosInstance.post(``)
+    }
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -51,12 +60,21 @@ export default function Navbar(props) {
                 </ListItemButton>
               </ListItem>
 
-              <ListItem key={1} disablePadding>
+              <ListItem key={2} disablePadding>
               <ListItemButton component = {Link} to="/about" selected={"/about" === path}>
                   <ListItemIcon>
                    <InfoIcon /> 
                   </ListItemIcon>
                   <ListItemText primary={"About"} />
+                </ListItemButton>
+              </ListItem>
+
+              <ListItem key={3} disablePadding>
+              <ListItemButton  >
+                  <ListItemIcon>
+                   <LogoutIcon /> 
+                  </ListItemIcon>
+                  <ListItemText primary={"Logout"} />
                 </ListItemButton>
               </ListItem>
             
