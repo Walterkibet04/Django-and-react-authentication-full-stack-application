@@ -55,8 +55,9 @@ const Login = ()=>{
                 <Box className={"itemBox"}>
                     <MyButton label={"login"} type={"submit"}/>
                 </Box>
-                <Box className={"itemBox"}>
-                    <Link to="/register">I dont have an account? register</Link>
+                <Box className={"itemBox"} sx={{flexDirection:'column'}} >
+                    <Link to="/register" >I dont have an account? register</Link>
+                    <Link to="/request/password_reset">Forgot Password ?: Click here</Link>
                 </Box>
 
             </Box>
