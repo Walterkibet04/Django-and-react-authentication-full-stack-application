@@ -26,7 +26,13 @@ export default function Navbar(props) {
     const navigate = useNavigate()
 
     const logoutUser = () =>{
-      AxiosInstance.post(``)
+      AxiosInstance.post(`logoutall/`, {
+
+      })
+      .then(()=>{
+        localStorage.removeItem("Token")
+        navigate('/')
+      })
     }
 
   return (
@@ -70,7 +76,7 @@ export default function Navbar(props) {
               </ListItem>
 
               <ListItem key={3} disablePadding>
-              <ListItemButton  >
+              <ListItemButton  onClick={logoutUser}>
                   <ListItemIcon>
                    <LogoutIcon /> 
                   </ListItemIcon>
