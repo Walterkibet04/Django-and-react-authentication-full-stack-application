@@ -7,11 +7,29 @@ import {Link} from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import AxiosInstance from './forms/AxiosInstance'
 import { useNavigate } from 'react-router-dom'
+import {yupResolver} from "@hookform/resolvers"
+import * as yup from "yup"
 
 const Register = ()=>{
     const navigate = useNavigate()
-    const {handleSubmit, control} = useForm()
 
+    const schema = yup
+    .object({
+        email: yup.string().email('please provide a valid email address').required('Email is a required field'),
+        password: yup.string()
+          .required('password is required')
+          .min(8, 'password must be atleast 8 characters long')
+          .matches(/[A-Z]/, 'Password must contain atleast one uppercase letter')
+          .matches(/[a-z]/, 'Password must contain atleast one lowercase letter')
+          .matches(/[0-9]/, 'Password must contain atleast one number')
+          .matches(/[@#$&*()!%^,.:;?<>+-]/, 'Password must contain atleast one special character'),
+
+        password2: yup.string().required('password confirmation is required')
+                     .oneOf([yup.ref('password'),null], 'passwords do not match')
+    })
+
+    const {handleSubmit, control} = useForm({resolver: yupResolver(schema)})
+    
     const submission = (data) =>{
         AxiosInstance.post(`register/`,
          {
