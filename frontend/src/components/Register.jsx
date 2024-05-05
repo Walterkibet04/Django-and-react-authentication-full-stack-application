@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import AxiosInstance from './forms/AxiosInstance'
 import { useNavigate } from 'react-router-dom'
-import {yupResolver} from "@hookform/resolvers"
+import {yupResolver} from "@hookform/resolvers/yup"
 import * as yup from "yup"
 
 const Register = ()=>{
