@@ -36,7 +36,7 @@ const Login = ()=>{
 
     return(
         <div className={'myBackground'}>
-        {ShowMessage ? <MyMessage text={"Invalid credentials please try again"} color={'#69C9AB'}/> : null}
+        {ShowMessage ? <MyMessage text={"Invalid credentials please try again"} color={'#EC5A75'}/> : null}
 
             <form onSubmit={handleSubmit(submission)}>
             <Box className={"whiteBox"}>

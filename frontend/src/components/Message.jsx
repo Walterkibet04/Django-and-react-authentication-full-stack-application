@@ -1,9 +1,9 @@
 import { Box } from "@mui/material"
 
-const MyMessage = ({text}) =>{
+const MyMessage = ({text, color}) =>{
     return(
         <Box sx={{
-            backgroundColor: '#00008B', 
+            backgroundColor: color, //'#00008B', 
             color:'#ffffff', 
             width: '90%', 
             height: '40px',
