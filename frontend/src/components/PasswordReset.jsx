@@ -18,20 +18,20 @@ const PasswordReset = () =>{
     const [ShowMessage, setShowMessage] = useState(false)
 
 
-    const submission = (data) => {
-        AxiosInstance.post(`api/password_reset/confirm/`,{
-            password: data.password, 
-            token: token,
-        })
+    // const submission = (data) => {
+    //     AxiosInstance.post(`api/password_reset/confirm/`,{
+    //         password: data.password, 
+    //         token: token,
+    //     })
 
-        .then((response) => {
-            setShowMessage(true)
-            setTimeout(() =>{
-                navigate('/')
-            }, 6000 )
-        })
+    //     .then((response) => {
+    //         setShowMessage(true)
+    //         setTimeout(() =>{
+    //             navigate('/')
+    //         }, 6000 )
+    //     })
       
-    }
+    // }
     return(
         <div className={"myBackground"}> 
 
