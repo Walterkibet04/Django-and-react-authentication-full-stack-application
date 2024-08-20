@@ -11,7 +11,7 @@ from knox.models import AuthToken
 User = get_user_model()
 
 
-class RegisterViewset(viewsets.ViewSet):
+class RegisterViewSet(viewsets.ViewSet):
     permissions_classes = [permissions.AllowAny]
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
